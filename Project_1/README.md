@@ -43,3 +43,8 @@ lists all files in the subdirectories
 
 ls -a
 shows hidden files in addition to the visible ones.
+
+ls -lh
+shows the file sizes in easily readable format.
+
+![Alt text](<images/Screenshot 2023-11-29 195801.png>)
