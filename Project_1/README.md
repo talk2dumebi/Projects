@@ -38,3 +38,8 @@ ls command is used to list files and directories in the current working director
 
 ![Alt text](<images/Screenshot 2023-11-29 195024.png>)
 
+ls -R
+lists all files in the subdirectories
+
+ls -a
+shows hidden files in addition to the visible ones.
