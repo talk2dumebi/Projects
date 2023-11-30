@@ -104,4 +104,69 @@ touch sqlite.sh
 ![Alt text](<images/Screenshot 2023-11-30 000358.png>)
 
 
+## 12.  `locate` Command:-
+
+The locate command is the quickest and simplest way to search for files and directories by their names.
+
+![Alt text](<images/Screenshot 2023-11-30 211146.png>)
+
+locate -i
+
+![Alt text](<images/Screenshot 2023-11-30 211331.png>)
+
+## 13.  `find` Command:-
+
+The  find  command can be used to find files or folders matching a particular search pattern. It searches recursively.
+
+![Alt text](<images/Screenshot 2023-11-30 212052.png>)
+
+## 14.  `grep` Command:-
+
+grep means search for a string within an output.
+
+![Alt text](<images/Screenshot 2023-11-30 212746.png>)
+
+## 15.  `df` Command:-
+
+The  df  command is used to get disk usage information. Its basic form will print information about the volumes mounted.
+
+![Alt text](<images/Screenshot 2023-11-30 213537.png>)
+
+df -h:  this will show those values in a human-readable format.
+
+![Alt text](<images/Screenshot 2023-11-30 215304.png>)
+
+## 16. `du` Command:-
+
+The  du  command will calculate the size of a directory as a whole.
+
+![Alt text](<images/Screenshot 2023-11-30 215724.png>)
+
+## 17.  `head` Command:-
+
+head means return the specified number of lines from the top.
+
+![Alt text](<images/Screenshot 2023-11-30 224732.png>)
+
+## 18.  `tail` Command:-
+
+tail means return the specified number of lines from the bottom.
+
+![Alt text](<images/Screenshot 2023-11-30 225150.png>)
+
+## 19.  `diff` Command:-
+
+diff means find the difference between two files.
+
+![Alt text](<images/Screenshot 2023-11-30 230107.png>)
+
+## 20.  `tar` Command:-
+
+The  tar  command is used to create an archive, grouping multiple files in a single file.
+
+![Alt text](<images/Screenshot 2023-11-30 232609.png>)
+
+![Alt text](<images/Screenshot 2023-11-30 232632.png>)
+
+
 
