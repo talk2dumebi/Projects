@@ -169,4 +169,23 @@ The  tar  command is used to create an archive, grouping multiple files in a s
 ![Alt text](<images/Screenshot 2023-11-30 232632.png>)
 
 
+# File Permissions and Ownership
+
+## 21.  `chmod` Command:-
+
+chmod means command to change file permissions.
+
+![Alt text](<images/Screenshot 2023-11-30 234227.png>)
+
+## 22.  `chown` Command:-
+
+chown means command for granting ownership of files or folders.
+(i have to create addUser called `students`).
+
+![Alt text](<images/Screenshot 2023-12-01 033159.png>)
+
+![Alt text](<images/Screenshot 2023-12-01 033251.png>)
+
+
+
 
