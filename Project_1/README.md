@@ -186,6 +186,142 @@ chown means command for granting ownership of files or folders.
 
 ![Alt text](<images/Screenshot 2023-12-01 033251.png>)
 
+## 24.  `kill` Command:-
+
+The  kill  program can send a variety of signals to a program. It's not just used to terminate a program, like the name would suggest, but that's its main job.
+
+![Alt text](<images/Screenshot 2023-12-04 214150.png>)
+
+## 25.  `ping` Command:-
+
+The  ping  command pings a specific network host, on the local network or on the Internet.
+
+![Alt text](<images/Screenshot 2023-12-04 214547.png>)
+
+## 26.  `wget` Command:-
+
+wget means direct download files from the internet.
+
+![Alt text](<images/Screenshot 2023-12-04 215353.png>)
+
+## 27.  `uname` Command:-
+
+uname means linux command to get basic information about the OS.
+
+![Alt text](<images/Screenshot 2023-12-04 230639.png>)
+
+## 28.  `top` Command:-
+
+The top command is used to display dynamic realtime information about running processes in the system.
+
+![Alt text](<images/Screenshot 2023-12-04 231141.png>)
+
+## 29.  `history` Command:-
+
+The command history helps you view commands you've previously run inside the terminal.
+
+![Alt text](<images/Screenshot 2023-12-04 232330.png>)
+
+## 30.  `man` Command:-
+
+man means access manual pages for all Linux commands.
+
+![Alt text](<images/Screenshot 2023-12-04 233601.png>)
+
+## 31.  `echo` Command:-
+
+echo means print any text that follows the command.
+
+![Alt text](<images/Screenshot 2023-12-04 233957.png>)
+
+## 32.  `zip, unzip` Commands:-
+
+zip means zip files in Linux.
+
+unzip means unzip files in Linux.
+
+![Alt text](<images/Screenshot 2023-12-04 235829.png>)
+
+unzip archive.zip
+
+![Alt text](<images/Screenshot 2023-12-05 000218.png>)
+
+## 33.  `hostname` Command:-
+
+A hostname command is used to view a computer’s hostname and domain name (DNS) (Domain Name Service), and to display or set a computer’s hostname or domain name.
+
+![Alt text](<images/Screenshot 2023-12-05 000602.png>)
+
+## 34.  `useradd, userdel` Commands:-
+
+useradd: command allows us to create a new user in Linux.
+
+userdel: is a command-line-based utility in Linux-based operating systems that helps in removing or deleting users from the system.
+
+sudo useradd johnDoe
+
+![Alt text](<images/Screenshot 2023-12-05 010322.png>)
+
+sudo userdel johnDoe
+
+![Alt text](<images/Screenshot 2023-12-05 010418.png>)
+
+## 35.  `apt-get` Command:-
+
+apt-get is a command line tool for interacting with the Advanced Package Tool (APT) library (a package management system for Linux distributions). It allows you to search for, install, manage, update, and remove software.
+
+![Alt text](<images/Screenshot 2023-12-05 011434.png>)
+
+## 36.  `nano, vi and jed` Commands:-
+
+Nano is a user-friendly, simple and WYSIWYG(What You See Is What You Get) text editor, which improves the features and user-friendliness of UW Pico text editor.
+
+![Alt text](<images/Screenshot 2023-12-05 012453.png>)
+
+![Alt text](<images/Screenshot 2023-12-05 012302.png>)
+
+The default editor that comes with the UNIX operating system is called vi (visual editor). Using vi editor, we can edit an existing file or create a new file from scratch.
+
+![Alt text](<images/Screenshot 2023-12-05 013800.png>)
+
+![Alt text](<images/Screenshot 2023-12-05 013307.png>)
+
+jed command in Linux is used to open up a text editor called “jed”. It is a friendly editor with a drop-down menu that can be used by programmers in Linux. 
+
+![Alt text](<images/Screenshot 2023-12-05 014913.png>)
+
+![Alt text](<images/Screenshot 2023-12-05 014723.png>)
+
+## 37.  `alias, unalias` Commands:-
+
+alias command instructs the shell to replace one string with another string while executing the commands.
+
+![Alt text](<images/Screenshot 2023-12-05 021138.png>)
+
+The unalias command removes the definition for each alias name specified, or removes all alias definitions if the -a flag is used.
+
+![Alt text](<images/Screenshot 2023-12-05 021541.png>)
+
+## 38.  `su` Command:-
+
+su command in linux allows a user to switch to another user account and gain all of its privileges.
+
+![Alt text](<images/Screenshot 2023-12-05 022144.png>)
+
+## 39.  `htop` Command:-
+
+htop command in Linux system is a command line utility that allows the user to interactively monitor the system’s vital resources or server’s processes in real time.
+
+![Alt text](<images/Screenshot 2023-12-05 022408.png>)
+
+## 40.  `ps` Command:-
+
+The ps command, short for Process Status, is a command line utility that is used to display or view information related to the processes running in a Linux system. 
+
+![Alt text](<images/Screenshot 2023-12-05 022724.png>)
+
+
+
 
 
 
