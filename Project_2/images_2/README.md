@@ -7,3 +7,13 @@
 3.  In the working directory i run `git init` 
 
 ![Alt text](<Screenshot 2024-01-01 212849.png>)
+
+#   Making my first commit
+
+1. In my working directory create a file `touch index.txt` and adding sentence in the file.
+
+2. Add git to staging area using `git add .`
+
+3. To commit i run this command `git commit -m "initial commit`
+
+![Alt text](<Screenshot 2023-12-26 213712.png>)
