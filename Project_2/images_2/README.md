@@ -27,3 +27,9 @@ allow me create the branch and switch to the new branch.
 
 ![Alt text](<Screenshot 2024-01-05 231927.png>)
 
+##  Listing Branches
+
+To list branches run this command `git branch`
+
+![Alt text](<Screenshot 2024-01-05 233349.png>)
+
