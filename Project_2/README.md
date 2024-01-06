@@ -33,8 +33,3 @@ To list branches run this command `git branch`
 
 ![Alt text](<images_2/Screenshot 2024-01-05 233349.png>)
 
-##  Change into an Old branch
-
-To change into an existing or old branch run this command `git checkout <branch-name>`
-
-![Alt text](<images_2/Screenshot 2024-01-05 234351.png>)
