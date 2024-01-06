@@ -6,7 +6,7 @@
 
 3.  In the working directory i run `git init` 
 
-![Alt text](<Screenshot 2024-01-01 212849.png>)
+![Alt text](<images_2/Screenshot 2024-01-01 212849.png>)
 
 #   Making my first commit
 
