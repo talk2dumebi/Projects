@@ -33,3 +33,11 @@ To list branches run this command `git branch`
 
 ![Alt text](<images_2/Screenshot 2024-01-05 233349.png>)
 
+##  Merging a branch into another branch
+
+If two branches MAIN and MASTER exist and i want merge into one branch. If we want to merge MASTER to MAIN i will run this command `git merge master`
+
+![Alt text](<images_2/Screenshot 2024-01-06 011758.png>)
+
+##  Delete a git branch
+
