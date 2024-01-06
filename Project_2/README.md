@@ -33,14 +33,3 @@ To list branches run this command `git branch`
 
 ![Alt text](<Screenshot 2024-01-05 233349.png>)
 
-## Change into an Old branch
-
-To change into an existing branch or old branch run this command `git checkout <branch-name>`
-
-![Alt text](<Screenshot 2024-01-05 234351.png>)
-
-## Merging a branch into another branch
-
-If there are two branches and we need to merge into one branch for example merging branch B into A run this command `git merge B`
-
-
