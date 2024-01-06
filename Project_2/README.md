@@ -6,7 +6,7 @@
 
 3.  In the working directory i run `git init` 
 
-![Alt text](<Screenshot 2024-01-01 212849.png>)
+![Alt text](<images_2/Screenshot 2024-01-01 212849.png>)
 
 #   Making my first commit
 
@@ -16,7 +16,7 @@
 
 3. To commit i run this command `git commit -m "initial commit`
 
-![Alt text](<Screenshot 2023-12-26 213712.png>)
+![Alt text](<images_2/Screenshot 2023-12-26 213712.png>)
 
 #  Working with Branches
 
@@ -25,13 +25,13 @@
 To make my first branch i ran this command `git checkout -b master` the flag -b 
 allow me create the branch and switch to the new branch.
 
-![Alt text](<Screenshot 2024-01-05 231927.png>)
+![Alt text](<images_2/Screenshot 2024-01-05 231927.png>)
 
 ##  Listing Branches
 
 To list branches run this command `git branch`
 
-![Alt text](<Screenshot 2024-01-05 233349.png>)
+![Alt text](<images_2/Screenshot 2024-01-05 233349.png>)
 
 ##  Change into an Old branch
 
