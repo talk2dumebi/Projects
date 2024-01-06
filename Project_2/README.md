@@ -41,3 +41,6 @@ If two branches MAIN and MASTER exist and i want merge into one branch. If we wa
 
 ##  Delete a git branch
 
+To delete git branch run this command `git branch -d <branch-name>`
+
+![Alt text](<images_2/Screenshot 2024-01-06 013116.png>)
