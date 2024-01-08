@@ -44,3 +44,34 @@ If two branches MAIN and MASTER exist and i want merge into one branch. If we wa
 To delete git branch run this command `git branch -d <branch-name>`
 
 ![Alt text](<images_2/Screenshot 2024-01-06 013116.png>)
+
+
+#   Collaboration and Remote Repositories
+
+##  Creating a Github Account
+
+1.  Visit www.github.com
+
+2.  Next enter username, password and email.
+
+![Alt text](<images_2/Screenshot 2024-01-08 225329.png>)
+
+3.  Next click on `verify` bottom to verify my identity.
+
+![Alt text](<images_2/Screenshot 2024-01-08 225404.png>)
+
+4.  Next click on `create account` bottom to create account.
+
+![Alt text](<images_2/Screenshot 2024-01-08 231742.png>)
+
+5.  An activation code will be sent to the email used, enter the code and click `continue`.
+
+![Alt text](<images_2/Screenshot 2024-01-08 225722.png>)
+
+6.  Next select preference and click `continue`
+
+![Alt text](<images_2/Screenshot 2024-01-08 225852.png>)
+
+7.  A list of Github plan will be shown click on `continue for free`
+
+![Alt text](<images_2/Screenshot 2024-01-08 230509.png>)
