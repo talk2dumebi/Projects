@@ -75,3 +75,22 @@ To delete git branch run this command `git branch -d <branch-name>`
 7.  A list of Github plan will be shown click on `continue for free`
 
 ![Alt text](<images_2/Screenshot 2024-01-08 230509.png>)
+
+
+#   Creating First Repository
+
+1.  Click on the top right corner of the Github account. At the drop down menu click on new repository.
+
+![Alt text](<images_2/Screenshot 2024-01-08 234008.png>)
+
+2.  Fill out the form to add a unique repository name, description and tick the box to add READ.me file.
+
+![Alt text](<images_2/Screenshot 2024-01-08 234747.png>)
+
+3.  Next click on the green bottom to create a repository
+
+![Alt text](<images_2/Screenshot 2024-01-08 234827.png>)
+
+
+#   Pushing Local git repository to Remote github repository
+
