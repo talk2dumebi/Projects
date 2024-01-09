@@ -94,10 +94,21 @@ To delete git branch run this command `git branch -d <branch-name>`
 
 #   Pushing Local git repository to Remote github repository
 
-.   Add a remote repository to the local repository with this command `git remote add origin <link to github repo>`
+Add a remote repository to the local repository with this command `git remote add origin <link to github repo>`
 
 ![Alt text](<images_2/Screenshot 2024-01-09 001023.png>)
 
-.   To get the remote link click on the green bottom copy the https link
+To get the remote link click on the green bottom copy the https link
 
 ![Alt text](<images_2/Screenshot 2024-01-09 001208.png>)
+
+After committing the changes in the local repo pushing the content to remote repo using this command `git push origin <branch-name>`
+
+![Alt text](<images_2/Screenshot 2024-01-09 013812.png>)
+
+
+#   Cloning Remote Git Repository
+
+Git clone is a git command line utility which is used to target an existing repository and create a clone, or copy of the target repository. This command is used for it `git clone <link to the repo>`
+
+![Alt text](<images_2/Screenshot 2024-01-09 015502.png>)
