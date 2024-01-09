@@ -112,3 +112,54 @@ After committing the changes in the local repo pushing the content to remote rep
 Git clone is a git command line utility which is used to target an existing repository and create a clone, or copy of the target repository. This command is used for it `git clone <link to the repo>`
 
 ![Alt text](<images_2/Screenshot 2024-01-09 015502.png>)
+
+#   Branch Management and tagging
+
+##  Introduction to Markdown Syntax
+
+## The most commonly used markdown syntax element
+
+### 1.  Heading: To create heading
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+
+### 2.  Emphasis: asterisks or underscore is used to emphasis text
+
+- *italic* or _italic_
+
+- **bold** __bold__
+
+### 3.  Lists: Markdown support both ordered and unordered list
+
+Unordered List
+- item 1
+
+- item 2
+
+- item 3
+
+Ordered List
+
+1. First item 
+
+2. Second item
+
+3. Third item
+
+
+### 4.  Links: To create an hyperlink
+
+(https://app.darey.io/auth/login)
+
+### 5.  Images: To display an image
+
+`![Alt text](https://examples.com/images.png>)`
+
+### 6.  Code: To display code or code snippets using backticks (`) to enclose the code
+
+console.log(`Welcome to dare.io`)
