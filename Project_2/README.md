@@ -94,3 +94,10 @@ To delete git branch run this command `git branch -d <branch-name>`
 
 #   Pushing Local git repository to Remote github repository
 
+.   Add a remote repository to the local repository with this command `git remote add origin <link to github repo>`
+
+![Alt text](<images_2/Screenshot 2024-01-09 001023.png>)
+
+.   To get the remote link click on the green bottom copy the https link
+
+![Alt text](<images_2/Screenshot 2024-01-09 001208.png>)
