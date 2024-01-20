@@ -146,6 +146,84 @@ After checking the relevant information about your PHP server through that page,
 ![Alt text](<images_4/Screenshot 2024-01-20 032549.png>)
 
 
+#   Retrieving Data from MYQSL Database with PHP
+
+##  Retrieving Data from MYQSL Database with PHP
+
+First, connect to the MySQL console using the root account. Runing this commands `mysql -u root -p`
+
+![Alt text](<images_4/Screenshot 2024-01-20 034218.png>)
+
+To create a new database, run the following command from your MySQL console. Runing this commands `CREATE DATABASE example_database;`
+
+![Alt text](<images_4/Screenshot 2024-01-20 034732.png>)
+
+Now you can create a new user and grant them full privileges on the custom database you’ve created.
+
+The following command creates a new user named `example_user`, using `mysql_native_password` as the default authentication method. We’re defining this user’s password as `password`, but you should replace this value with a secure password of your own choosing.
+
+![Alt text](<images_4/Screenshot 2024-01-20 034949.png>)
+
+Now we need to give this user permission over the example_database database:
+
+![Alt text](<images_4/Screenshot 2024-01-20 035203.png>)
+
+This will give the example_user user full privileges over the example_database database while preventing this user from creating or modifying other databases on your server.
+
+Now exit the MySQL shell with the following command.
+
+![Alt text](<images_4/Screenshot 2024-01-20 035432.png>)
+
+You can test if the new user has the proper permissions by logging in to the MySQL console again, this time using the custom user credentials. Notice the -p flag in this command, which will prompt you for the password used when creating the example_user user.
+
+![Alt text](<images_4/Screenshot 2024-01-20 035702.png>)
+
+After logging in to the MySQL console, confirm that you have access to the example_database database.
+
+
+This will return the following output
+
+![Alt text](<images_4/Screenshot 2024-01-20 035845.png>)
+
+Next, we’ll create a test table named todo_list. From the MySQL console, run the following statement:
+
+![Alt text](<images_4/Screenshot 2024-01-20 040310.png>)
+
+Insert a few rows of content in the test table. You might want to repeat the next command a few times, using different values.
+
+![Alt text](<images_4/Screenshot 2024-01-20 040710.png>)
+
+After confirming that you have valid data in your test table, you can exit the MySQL console:
+
+![Alt text](<images_4/Screenshot 2024-01-20 040908.png>)
+
+Now you can create the PHP script that will connect to MySQL and query for your content. Create a new PHP file in your custom web root directory using your preferred editor. We’ll use nano for that. `nano /var/www/projectLEMP/todo_list.php`
+
+The following PHP script connects to the MySQL database and queries for the content of the todo_list table, exhibiting the results in a list. If there’s a problem with the database connection, it will throw an exception.
+
+Add the following content to your todo_list.php script.
+
+![Alt text](<images_4/Screenshot 2024-01-20 041418.png>)
+
+Save and close the file when you’re done editing.
+
+We can now access this page in the web browser by visiting the domain name or public IP address configured for the website, followed by `/todo_list.php`. We should receive a page like the following
+
+![Alt text](<images_4/Screenshot 2024-01-20 041751.png>)
+
+That means the PHP environment is ready to connect and interact with the MySQL server.
+
+
+Thank you...
+
+
+
+
+
+
+
+
+
 
 
 
