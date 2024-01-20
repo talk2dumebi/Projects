@@ -101,11 +101,35 @@ We then, open a new configuration file in Nginx’s sites-available directory us
 
 We also need to activate the configuration by linking to the configuration file from Nginx’s sites-enabled directory run this command `sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
 
-![Alt text](<images_4/Screenshot 2024-01-20 015838.png>)
+![Alt text](<images_4/Screenshot 2024-01-20 020454.png>)
 
 Then, unlink the default configuration file from the /sites-enabled/ directory:
 
 ![Alt text](<images_4/Screenshot 2024-01-20 020010.png>)
+
+This will tell Nginx to use the configuration next time it is reloaded. You can test your configuration for syntax errors by running the following.
+
+![Alt text](<images_4/Screenshot 2024-01-20 024534.png>)
+
+When ready, reload Nginx to apply the changes.
+
+![Alt text](<images_4/Screenshot 2024-01-20 025419.png>)
+
+The new website is now active, but the web root `/var/www/projectLEMP` is still empty. Create an index.html file in that location so that we can test the new server block works as expected. this command will be run `nano /var/www/projectLEMP/index.html`
+
+![Alt text](<images_4/Screenshot 2024-01-20 030048.png>)
+
+Now we go to the browser and access the server’s domain name or IP address, as listed within the server_name directive in the server block configuration file. To see this...
+
+![Alt text](<images_4/Screenshot 2024-01-20 030625.png>)
+
+If this page shown, it means the Nginx server block is working as expected.
+
+
+
+
+
+
 
 
 
