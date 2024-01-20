@@ -10,3 +10,18 @@
 
 ![Alt text](<images_4/Screenshot 2024-01-19 232826.png>)
 
+3.  To verify nginx is install and runing as a service on Ubuntu this command must be run `sudo systemctl status nginx`
+
+![Alt text](<images_4/Screenshot 2024-01-20 002809.png>)
+
+4.  After checking the installation of nginx, the next is to check if nginx is responding to the internet. `http://<Public-IP-Address>:80`
+
+![Alt text](<images_4/Screenshot 2024-01-20 003121.png>)
+
+
+#   Installing Mysql
+
+##  Step Two: installing MySQL
+
+Now that the web server is up and running, it is time to install MySQL. MySQL is a database management system. Basically, it will organize and provide access to databases where the site can store information. To install
+MYSQL run this command `sudo apt install mysql-server`
