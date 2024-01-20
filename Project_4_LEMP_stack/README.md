@@ -66,3 +66,16 @@ To exist from MYSQL console `exit`
 
 ![Alt text](<images_4/Screenshot 2024-01-20 011118.png>)
 
+
+
+#   Enable PHP on the website
+
+##  Step Four:  Enable PHP on the website
+
+You have Nginx installed to serve your content and MySQL installed to store and manage your data. Now you can install PHP to process code and generate dynamic content for the web server.
+
+While Apache embeds the PHP interpreter in each request, Nginx requires an external program to handle PHP processing and act as a bridge between the PHP interpreter itself and the web server.
+
+To install php we need to install `php8.1-fpm` and `php-mysql`.
+
+![Alt text](<images_4/Screenshot 2024-01-20 012051.png>)
