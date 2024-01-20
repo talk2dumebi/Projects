@@ -126,6 +126,27 @@ Now we go to the browser and access the server’s domain name or IP address, as
 If this page shown, it means the Nginx server block is working as expected.
 
 
+#   Step Five   Testing PHP with Nginx
+
+##  Testing PHP with Nginx
+
+
+The LEMP stack should now be completely set up. We can test it to validate that Nginx can correctly hand `.php` files off to your PHP processor.
+
+We can do this by creating a test PHP file in your document root. Open a new file called `info.php` within the document root in your preferred text editor. Runing this command `nano /var/www/your_domain/info.php`
+
+![Alt text](<images_4/Screenshot 2024-01-20 031810.png>)
+
+We can now access this page in the web browser by visiting the domain name or public IP address set up in the Nginx configuration file, followed by `/info.php`.
+
+![Alt text](<images_4/Screenshot 2024-01-20 032145.png>)
+
+After checking the relevant information about your PHP server through that page, it’s best to remove the file we created as it contains sensitive information about the PHP environment and the Ubuntu server. We can use `rm` to remove that file. Runing this commands `sudo rm /var/www/your_domain/info.php`
+
+![Alt text](<images_4/Screenshot 2024-01-20 032549.png>)
+
+
+
 
 
 
