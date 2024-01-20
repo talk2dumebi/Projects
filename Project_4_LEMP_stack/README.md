@@ -1,4 +1,4 @@
-#   #   LAMP STACK implementation
+#   #   LEMP STACK implementation
 
 ##   Step One    Installing the Nginx Web Server
 
@@ -35,4 +35,34 @@ After installation log into MYSQL console with this command `sudo mysql`
 Next, this command `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';` is run to set password for the root user.
 
 ![Alt text](<images_4/Screenshot 2024-01-20 004501.png>)
+
+Then we exist Mysql using this command `exit`
+
+![Alt text](<images_4/Screenshot 2024-01-20 004818.png>)
+
+When the installation is complete, run a simple security script that comes pre-installed with MySQL which will remove some dangerous defaults and lock down access to your database system. Start the interactive script by running. `sudo mysql_secure_installation`
+
+![Alt text](<images_4/Screenshot 2024-01-20 005356.png>)
+
+This will ask if you want to configure the VALIDATE PASSWORD PLUGIN.
+
+![Alt text](<images_4/Screenshot 2024-01-20 005822.png>)
+
+If you answer “yes”, you’ll be asked to select a level of password validation. Keep in mind that if you enter 2 for the strongest level, you will receive errors when attempting to set any password which does not contain numbers, upper and lowercase letters, and special characters, or which is based on common dictionary words.
+
+![Alt text](<images_4/Screenshot 2024-01-20 010040.png>)
+
+Regardless of whether you chose to set up the VALIDATE PASSWORD PLUGIN, your server will next ask you to select and confirm a password for the MySQL root user. This is not to be confused with the system root. The database root user is an administrative user with full privileges over the database system. Even though the default authentication method for the MySQL root user dispenses the use of a password, even when one is set, you should define a strong password here as an additional safety measure. We’ll talk about this in a moment.
+
+If you’ve enabled password validation, you’ll be shown the password strength for the root password you just entered and your server will ask if you want to change that password. If you are happy with your current password, enter N for “no” at the prompt.
+
+![Alt text](<images_4/Screenshot 2024-01-20 010707.png>)
+
+When you’re finished, test if you’re able to log in to the MySQL console by typing.
+
+![Alt text](<images_4/Screenshot 2024-01-20 010935.png>)
+
+To exist from MYSQL console `exit`
+
+![Alt text](<images_4/Screenshot 2024-01-20 011118.png>)
 
