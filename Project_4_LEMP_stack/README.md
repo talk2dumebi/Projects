@@ -70,7 +70,7 @@ To exist from MYSQL console `exit`
 
 #   Enable PHP on the website
 
-##  Step Four:  Enable PHP on the website
+##  Step Three:  Enable PHP on the website
 
 You have Nginx installed to serve your content and MySQL installed to store and manage your data. Now you can install PHP to process code and generate dynamic content for the web server.
 
@@ -79,3 +79,35 @@ While Apache embeds the PHP interpreter in each request, Nginx requires an exter
 To install php we need to install `php8.1-fpm` and `php-mysql`.
 
 ![Alt text](<images_4/Screenshot 2024-01-20 012051.png>)
+
+
+#   Step Four   Configuring Nginx to Use the PHP Processor
+
+##   Configuring Nginx to Use the PHP Processor
+
+When using the Nginx web server, we can create server blocks (similar to virtual hosts in Apache) to encapsulate configuration details and host more than one domain on a single server. In this guide, we’ll use projectLEMP as an example domain name.
+
+Create the root web directory for your_domain(projectLEMP) `sudo mkdir /var/www/projectLEMP`
+
+![Alt text](<images_4/Screenshot 2024-01-20 013203.png>)
+
+Next, we need to assign ownership of the directory with the `$USER` environment variable, which will reference the current system user.
+
+![Alt text](<images_4/Screenshot 2024-01-20 014110.png>)
+
+We then, open a new configuration file in Nginx’s sites-available directory using a preferred command-line edito(nano). `sudo nano /etc/nginx/sites-available/projectLEMP`
+
+![Alt text](<images_4/Screenshot 2024-01-20 015412.png>)
+
+We also need to activate the configuration by linking to the configuration file from Nginx’s sites-enabled directory run this command `sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/`
+
+![Alt text](<images_4/Screenshot 2024-01-20 015838.png>)
+
+Then, unlink the default configuration file from the /sites-enabled/ directory:
+
+![Alt text](<images_4/Screenshot 2024-01-20 020010.png>)
+
+
+
+
+
