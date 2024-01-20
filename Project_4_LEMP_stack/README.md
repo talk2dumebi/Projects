@@ -25,3 +25,14 @@
 
 Now that the web server is up and running, it is time to install MySQL. MySQL is a database management system. Basically, it will organize and provide access to databases where the site can store information. To install
 MYSQL run this command `sudo apt install mysql-server`
+
+![Alt text](<images_4/Screenshot 2024-01-20 003627.png>)
+
+After installation log into MYSQL console with this command `sudo mysql`
+
+![Alt text](<images_4/Screenshot 2024-01-20 004018.png>)
+
+Next, this command `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';` is run to set password for the root user.
+
+![Alt text](<images_4/Screenshot 2024-01-20 004501.png>)
+
