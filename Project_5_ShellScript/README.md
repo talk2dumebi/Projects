@@ -70,3 +70,52 @@ b.  To format output in a bash script, output text in the terminal.
 c.  Output the result of a command into file.
 
 ![Alt text](<images_5/Screenshot 2024-02-07 212712.png>)
+
+c.  Pass the content of a file as input to a command
+
+![Alt text](<images_5/Screenshot 2024-02-07 220543.png>)
+
+d. Pass the result of a command as input to another command
+
+![Alt text](<images_5/Screenshot 2024-02-07 222654.png>)
+
+####    5. Functions are like a mini-script inside the scripts. We will create a function with a name & whenever that function is required, we will just type the name of the function rather than typing the whole section of a script again & again.
+
+This function was ran:
+
+![Alt text](<images_5/Screenshot 2024-02-07 223147.png>)
+
+The output:
+
+![Alt text](<images_5/Screenshot 2024-02-07 223549.png>)
+
+#   Writing my First Shell Script
+
+a.  Open a folder called `shell-scripting` this will hold the script, then
+
+![Alt text](<images_5/Screenshot 2024-02-07 225440.png>)
+
+b.  Create (cd into folder) a file called `user-input.sh` with this command `touch user-input`
+
+![Alt text](<images_5/Screenshot 2024-02-07 230958.png>)
+
+c.  The following command will be run
+
+![Alt text](<images_5/Screenshot 2024-02-07 231212.png>)
+
+d.  Save the file
+
+![Alt text](<images_5/Screenshot 2024-02-07 231350.png>)
+
+e.  Run the command `chmod +x <file-name>` to make the file executable
+
+![Alt text](<images_5/Screenshot 2024-02-07 231457.png>)
+
+f.  And run the script using this command `./<file-name>`
+
+`./user-input.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-07 231715.png>)
+
+
+
