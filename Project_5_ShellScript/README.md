@@ -91,6 +91,7 @@ The output:
 
 #   Writing my First Shell Script
 
+
 a.  Open a folder called `shell-scripting` this will hold the script, then
 
 ![Alt text](<images_5/Screenshot 2024-02-07 225440.png>)
@@ -118,4 +119,48 @@ f.  And run the script using this command `./<file-name>`
 ![Alt text](<images_5/Screenshot 2024-02-07 231715.png>)
 
 
+#   Directory Manipulation and Navigation
+
+a.  Open a file called `navigating-linux-filesystem.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-07 232854.png>)
+
+b.  The following command will be run
+
+![Alt text](<images_5/Screenshot 2024-02-07 233918.png>)
+
+
+c.  Run the command `chmod +x <file-name>` to make the file executable
+
+![Alt text](<images_5/Screenshot 2024-02-07 234303.png>)
+
+d.  And run the script using this command `./<file-name>`
+
+`./navigating-linux-filesystem.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-08 000235.png>)
+
+
+#   File Operations and Sorting
+
+a.  Open a file called `sorting.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-08 001101.png>)
+
+b.  The following command will be run
+
+![Alt text](<images_5/Screenshot 2024-02-08 001446.png>)
+
+c.  Run the command `chmod +x <file-name>` to make the file executable
+
+![Alt text](<images_5/Screenshot 2024-02-08 001635.png>)
+
+d.  And run the script using this command `./<file-name>`
+
+`./sorting.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-08 002624.png>)
+
+
+#   Working with Numbers and Calculations
 
