@@ -164,3 +164,40 @@ d.  And run the script using this command `./<file-name>`
 
 #   Working with Numbers and Calculations
 
+a.  Open a file called `calculations.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-08 003134.png>)
+
+b.  The following command will be run
+
+![Alt text](<images_5/Screenshot 2024-02-08 003335.png>)
+
+c.  Run the command `chmod +x <file-name>` to make the file executable
+
+![Alt text](<images_5/Screenshot 2024-02-08 003657.png>)
+
+d.  And run the script using this command `./<file-name>`
+
+`./calculations.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-08 003840.png>)
+
+
+#   File Backup and Timestampling
+
+a.  Open a file called `backup.sh`
+
+![Alt text](<images_5/Screenshot 2024-02-08 004324.png>)
+
+b.  The following command will be run
+
+![Alt text](<images_5/Screenshot 2024-02-08 004619.png>)
+
+c.  Run the command `chmod +x <file-name>` to make the file executable
+
+![Alt text](<images_5/Screenshot 2024-02-08 004737.png>)
+
+d.  And run the script using this command `./<file-name>`
+
+`./backup.sh`
+
