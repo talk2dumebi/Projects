@@ -191,13 +191,21 @@ a.  Open a file called `backup.sh`
 
 b.  The following command will be run
 
-![Alt text](<images_5/Screenshot 2024-02-08 004619.png>)
+![Alt text](<images_5/Screenshot 2024-02-18 204107.png>)
 
 c.  Run the command `chmod +x <file-name>` to make the file executable
 
-![Alt text](<images_5/Screenshot 2024-02-08 004737.png>)
+![Alt text](<images_5/Screenshot 2024-02-18 204530.png>)
 
 d.  And run the script using this command `./<file-name>`
 
 `./backup.sh`
 
+![Alt text](<images_5/Screenshot 2024-02-18 204107.png>)
+
+`backup directory`
+
+![Alt text](<images_5/Screenshot 2024-02-18 204704.png>)
+
+
+Thank you...
