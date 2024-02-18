@@ -203,7 +203,7 @@ d.  And run the script using this command `./<file-name>`
 
 ![Alt text](<images_5/Screenshot 2024-02-18 204107.png>)
 
-`backup directory`
+`the backup directory`
 
 ![Alt text](<images_5/Screenshot 2024-02-18 204704.png>)
 
