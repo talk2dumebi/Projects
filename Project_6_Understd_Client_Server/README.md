@@ -10,8 +10,10 @@
 
 Run this command `curl -Iv www.propitixhomes.com` to see client server communication in action.
 
+![Alt text](<images_6/Screenshot 2024-02-29 163111.png>)
 
 
-
+#   Implementing Client-Server Architecture using MySQL
+##  Database Management System (DBMS).
 
 
