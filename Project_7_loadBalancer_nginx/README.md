@@ -34,7 +34,7 @@ Load balancing prevents a website from becoming crippled when there’s an overf
 
 . Open port 8000. We will be running the webservers on port 8000 while the load balancers runs on port 80. We need to open the 8000 to allow traffic from anywhere. 
 
-. Click on the instance ID to get details of the EC2 instance,
+. Click on the instance ID to get details of the EC2 instance.
 
 ![alt text](<images_7/Screenshot 2024-03-08 233124.png>)
 
@@ -59,4 +59,34 @@ Load balancing prevents a website from becoming crippled when there’s an overf
 ![alt text](<images_7/Screenshot 2024-03-08 235158.png>)
 
 ###   Step Three: Install Apache Webserver
+
+After provisioning both of the servers and have opened the necessary ports. Its time to install apache software on both servers. To do so we must first connect to the webserver via ssh. Then we can now run commands on the terminal the webservers.
+
+. Connecting to the webserver: To connect to the webserver, click on the instance ID, at the top of the page click on connect.
+
+![alt text](<images_7/Screenshot 2024-03-09 002027.png>)
+
+. Next copy the ssh command below:
+
+![alt text](<images_7/Screenshot 2024-03-09 003603.png>)
+
+. Open a terminal (your prefer terminal) in our local machine, paste the ssh and follow the step.
+
+![alt text](<images_7/Screenshot 2024-03-09 003647.png>)
+
+. After the steps giving we should be connected to a terminal on the instance.
+
+![alt text](<images_7/Screenshot 2024-03-09 004702.png>)
+
+. Next install apache with this command:
+
+`sudo apt update -y &&  sudo apt install apache2 -y`
+
+![alt text](<images_7/Screenshot 2024-03-09 010026.png>)
+
+. Verify if Apache is running using this command:
+
+`sudo systemctl status apache2`
+
+![alt text](<images_7/Screenshot 2024-03-09 010301.png>)
 
