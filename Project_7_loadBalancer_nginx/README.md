@@ -163,7 +163,7 @@ We will start by configuring Apache webserver to serve content on port 8000 inst
 
 . Paste the configuration file to act like a load balancer. Make sure we edit the file  and provide necessary information like the server IP address.
 
-![alt text](<images_7/Screenshot 2024-03-09 022015.png>)
+![alt text](<images_7/Screenshot 2024-03-09 030822.png>)
 
 . Test the configuration with this command.
 
