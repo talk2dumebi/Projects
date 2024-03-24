@@ -165,6 +165,7 @@ We will start by configuring Apache webserver to serve content on port 8000 inst
 
 ![alt text](<images_7/Screenshot 2024-03-09 030822.png>)
 
+
 . Test the configuration with this command.
 
 `sudo nginx -t`
