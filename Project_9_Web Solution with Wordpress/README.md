@@ -50,9 +50,7 @@ In this project, we shall:
 6.  Use gdisk utility to create a single partition (10GB) on each of the 3 disks:
 
 `sudo gdisk /dev/xvdf`
-
 `sudo gdisk /dev/xvdg`
-
 `sudo gdisk /dev/xvdh`
 
 ![alt text](<image_9/Screenshot 2024-04-17 032527.png>)
@@ -69,12 +67,44 @@ In this project, we shall:
 
 9.  Use `pvcreate` utility to mark each of 3 disks as physical volumes (PVs) to be used by LVM.
 
-`sudo pvcreate /dev/xvdf1`
+`sudo pvcreate /dev/xvdf1 pvcreate /dev/xvdg1 pvcreate /dev/xvdh1`
 
-`sudo pvcreate /dev/xvdg1`
+![alt text](<image_9/Screenshot 2024-04-17 034305.png>)
 
-`sudo pvcreate /dev/xvdh1`
+10. Verify that the physical volumes were created successfully by running `sudo pvs`.
 
+![alt text](<image_9/Screenshot 2024-04-17 034005.png>)
 
+11. Using the `vgcreate` utility, create a volume group named `webdata-vg` and add all the three PVS to the volume group.
 
+`sudo vgcreate webdata-vg /dev/xvdh1 /dev/xvdg1 /dev/xvdf1`
 
+![alt text](<image_9/Screenshot 2024-04-17 035014.png>)
+
+12. Verify that the volume group was created successfully using `sudo vgs`
+
+![alt text](<image_9/Screenshot 2024-04-17 035235.png>)
+
+13. Using the `lvcreate`  utility, create two logical volumes(LVs); `apps-lv` and `logs-lv`. Assign each LVs about half
+
+ of the volume group size which is about 30GB. I assigned both 14GB size; apps-lv will be used to store data for the 
+
+ Website while logs-lv will be used to store data for logs. Using this command below.
+
+ `sudo lvcreate -n apps-lv -L 14G webdata-vg`
+
+`sudo lvcreate -n logs-lv -L 14G webdata-vg`
+
+![alt text](<image_9/Screenshot 2024-04-17 040419.png>)
+
+14. Verify that the LVs were created successfully using `sudo lvs`.
+
+![alt text](<image_9/Screenshot 2024-04-17 040632.png>)
+
+15. Verify the entire setup. Using this command.
+
+`sudo vgdisplay -v #view complete setup - VG, PV, and LV`
+
+`sudo lsblk`
+
+![alt text](<image_9/Screenshot 2024-04-17 041246.png>)
