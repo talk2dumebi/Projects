@@ -108,3 +108,69 @@ In this project, we shall:
 `sudo lsblk`
 
 ![alt text](<image_9/Screenshot 2024-04-17 041246.png>)
+
+16. Use `mkfs.ext4` to format the logical volumes with `ext4 filesystem`. Using the following command.
+
+`sudo mkfs -t ext4 /dev/webdata-vg/apps-lv`
+
+![alt text](<image_9/Screenshot 2024-04-18 215057.png>)
+
+`sudo mkfs -t ext4 /dev/webdata-vg/logs-lv`
+
+![alt text](<image_9/Screenshot 2024-04-18 215209.png>)
+
+17. Create /var/www/html directory to store website files.
+
+`sudo mkdir -p /var/www/html`
+
+18. Create /home/recovery/logs to store backup of log data:
+
+`sudo mkdir -p /home/recovery/logs`
+
+19. Mount /var/www/html on apps-lv logical volume:
+
+`sudo mount /dev/webdata-vg/apps-lv /var/www/html/`
+
+We shall mount 'logs-lv' logical volume on /var/log directory . Since this mount point isn't an empty directory, there is need to backup its content before mounting as mounting would cover up this content and will render it unavailable until one unmounts.
+
+20. Use `rsync` utility to backup all the files in the log directory /var/log into /home/recovery/logs.
+
+`sudo rsync -av /var/log/. /home/recovery/logs/`
+
+21. Proceed to mount logs-lv logical volume on /var/log. (Note that all the existing data on /var/log will be covered 
+
+up and rendered unavailable to whatever process uses them).
+
+`sudo mount /dev/webdata-vg/logs-lv /var/log`
+
+22. Then, we restore the log files back into /var/log directory.
+
+`sudo rsync -av /home/recovery/logs/. /var/log`
+
+TIP:
+
+-   Rsync is a free software utility for Unix- and Linux-like systems that copies files and directories from one host to 
+
+    another. 
+
+-   It is considered to be a lightweight application because file transfers are incremental.
+
+-   After the initial full transfer, only bits in files that have been changed are transferred.
+
+23. Update the `/etc/fstab` file to make persistent the mount configuration even after a system reboot.
+
+-   The UUID of the device will be used to update the `/etc/fstab` file.
+
+` sudo blkid`
+
+![alt text](<image_9/Screenshot 2024-04-18 222259.png>)
+
+` sudo vi /etc/fstab`
+
+![alt text](<image_9/Screenshot 2024-04-18 224013.png>)
+
+24. Test the configuration and reload the daemon.  `sudo mount -a`  `sudo systemctl daemon-reload`
+
+25. Verify the setup by running `df -h`
+
+![alt text](<image_9/Screenshot 2024-04-18 224613.png>)
