@@ -312,7 +312,7 @@ ONLY from your Web Server’s IP address, so in the Inbound Rule configuration s
 
 ![alt text](<image_9/Screenshot 2024-04-21 143457.png>)
 
-If you see this message — it means your WordPress has successfully connected to your remote MySQL database.
+If you see this message — it means WordPress has successfully connected to your remote MySQL database.
 
 ![alt text](<image_9/Screenshot 2024-04-21 143637.png>)
 
