@@ -7,6 +7,8 @@
 
 -   Generally, web, or mobile solutions are implemented based on what is called the Three-tier Architecture; a client-server software architecture pattern that comprise of 3 separate layers: 
 
+##   Implementing LVM on linux servers (Web and Database servers)
+
 1.  Presentation Layer (PL): This is the user interface such as the client server or browser on your laptop.
 
 2.  Business Layer (BL): This is the backend program that implements business logic. Application or Webserver 
@@ -174,3 +176,146 @@ TIP:
 25. Verify the setup by running `df -h`
 
 ![alt text](<image_9/Screenshot 2024-04-18 224613.png>)
+
+
+##   Installing wordpress and configuring to use MYSQL Database
+
+###  Step 2 — Prepare the Database Server
+
+-   A second RedHat EC2 instance was launched and the above steps were repeated. instead of `apps-lv` logical volume,
+
+    `db-lv` was created and mounted to `/db` directory instead of `/var/www/html` directory.
+
+### Step 3 — Install WordPress on the Web Server EC2
+
+1.  Updating the server 
+
+    `sudo yum update -y`
+
+2. Install wget, Apache and it's dependencies
+
+    `sudo yum -y install wget httpd php php-mysqlnd php-fpm php-json`
+
+3. Start Apache
+
+    `sudo systemctl enable httpd`
+
+    `sudo systemctl start httpd`
+
+4.  To install PHP and it's dependencies
+
+    `sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm`
+
+    `sudo yum install yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm`
+
+    `sudo yum module list php`
+
+    `sudo yum module reset php`
+
+    `sudo yum module enable php:remi-7.4`
+
+    `sudo yum install php php-opcache php-gd php-curl php-mysqlnd`
+
+    `sudo systemctl start php-fpm`
+
+    `sudo systemctl enable php-fpm`
+
+    `setsebool -P httpd_execmem 1`
+
+5.  Restart Apache
+
+    `sudo systemctl restart httpd`
+
+6.  Download wordpress and copy wordpress to `var/www/html`
+
+    `mkdir wordpress`
+
+    `cd  wordpress`
+
+    `sudo wget http://wordpress.org/latest.tar.gz`
+
+    `sudo tar xzvf latest.tar.gz`
+
+    `sudo rm -rf latest.tar.gz`
+
+    `cp wordpress/wp-config-sample.php wordpress/wp-config.php`
+
+    `cp -R wordpress/. /var/www/html/`
+
+7.  Configure SELinux Policies
+
+    `sudo chown -R apache:apache /var/www/html/wordpress`
+
+    `sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R`
+
+    `sudo setsebool -P httpd_can_network_connect=1`
+
+###  Step 4 — Install MySQL on your DB Server EC2
+
+1.  Update and install mysql server:
+
+    `sudo yum update`
+
+    `sudo yum install mysql-server`
+
+2.  Verify that the service is up and running by using `sudo systemctl status` mysqld`. If the service is not running 
+
+    restart and enable with this command.
+
+    `sudo systemctl restart mysqld`
+
+    `sudo systemctl enable mysqld`
+
+###  Step 5 — Configure DB to work with WordPress
+
+    sudo mysql
+
+    CREATE DATABASE wordpress;
+
+    CREATE USER 'myuser'@'<insert private IP>' IDENTIFIED BY 'mypass'; 
+
+    GRANT ALL ON wordpress.* TO 'myuser'@'172.31.92.2';
+
+    FLUSH PRIVILEGES;
+
+    SHOW DATABASES;
+
+    exit
+
+### Step 6 — Configure WordPress to connect to remote database.
+
+Hint: Do not forget to open MySQL port 3306 on DB Server EC2. For extra security, you shall allow access to the DB server
+
+ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32.
+
+![alt text](<image_9/Screenshot 2024-04-21 142033.png>)
+
+1. Install MySQL client and test that you can connect from your Web Server to your DB server by using mysql-client
+
+    `sudo yum install mysql`
+
+    `sudo mysql -u myuser -p -h <>`
+
+2.  Verify if you can successfully execute SHOW DATABASES; command and see a list of existing databases.
+
+3.  Change permissions and configuration so Apache could use WordPress.
+
+4.  Enable TCP port 80 in Inbound Rules configuration for your Web Server EC2 (enable from everywhere 0.0.0.0/0 or from 
+
+    your workstation’s IP).
+
+5.  Try to access from your browser the link to your WordPresshttp://<Webserver-Publiuc-IP>/wordpress/
+
+![alt text](<image_9/Screenshot 2024-04-21 143051.png>)
+
+    Click Let’go, complete the login details and hit continue
+
+![alt text](<image_9/Screenshot 2024-04-21 143457.png>)
+
+If you see this message — it means your WordPress has successfully connected to your remote MySQL database.
+
+![alt text](<image_9/Screenshot 2024-04-21 143637.png>)
+
+Thank you...
+
+
