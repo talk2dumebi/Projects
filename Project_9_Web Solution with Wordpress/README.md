@@ -317,5 +317,3 @@ If you see this message — it means WordPress has successfully connected to you
 ![alt text](<image_9/Screenshot 2024-04-21 143637.png>)
 
 Thank you...
-
-
