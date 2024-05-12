@@ -164,4 +164,109 @@ of vital components to create a cohesive and high-performing system. The key ele
 
 -   Create a database user and name it 'webaccess'
 
--   Grant permission to 'webaccess' user on 'tooling' database to do anything only from the webservers subnet cidr.
+-   Grant permission to 'webaccess' user on 'tooling' database to do anything only from the webservers subnet
+
+    cidr.
+
+Test if you can access the db-server remotely with this webaccess user.
+
+![alt text](<images_10/Screenshot 2024-04-26 212708.png>)
+
+##  Step 4: Prepare the Web Servers
+
+In this step, we will be launching three web servers. We need to make sure that the web servers can serve the same 
+
+content from shared storage solutions, which in this case are the MySQL database and NFS server.
+
+For storing shared files that our Web Servers will use, we will utilize NFS and mount previously created logical Volume 
+
+`lv-apps` to the folder where Apache stores files to be served to the users `(/var/www)`.
+
+This approach will make our Web Servers `stateless`, which means we will be able to add new ones or remove them whenever
+
+we need, and the integrity of the data (in the database and on NFS) will be preserved.
+
+
+1.  Launch a new EC2 instance with RHEL 8 Operating System
+
+2.  Install NFS client
+
+    `sudo yum update -y`
+
+    `sudo yum install nfs-utils nfs4-acl-tools -y`
+
+3.  Mount /var/www/ and target the NFS server’s export for apps
+
+    `sudo mkdir /var/www`
+
+    `sudo mount -t nfs -o rw,nosuid 172.31.23.174:/mnt/apps /var/www`
+
+4.  Verify that NFS was mounted successfully by running df -h. Make sure that the changes will persist on the Web Server 
+
+    after reboot by adding the below text to the /etc/fstab file and reload daemon:  
+
+![alt text](<images_10/Screenshot 2024-04-26 224610.png>)
+
+5. Install Remi’s repository, Apache and PHP
+
+    `sudo yum install git -y`
+
+    `sudo yum install httpd -y`
+
+    `sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm -y`
+
+    `sudo dnf install dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y`
+
+    `sudo dnf module reset php -y -y`
+
+    `sudo dnf module enable php:remi-7.4 -y`
+
+    `sudo dnf install php php-opcache php-gd php-curl php-mysqlnd -y -y`
+
+    `sudo systemctl start php-fpm`
+
+    `sudo systemctl enable php-fpm`
+
+    `sudo setsebool -P httpd_execmem 1`
+
+
+![alt text](<images_10/Screenshot 2024-04-26 225915.png>)
+
+-   ###   Repeat steps 1–5 for the other 2 Web servers.
+
+6.  Verify that Apache files and directories are available on the Web Server in `/var/www` and also on the NFS server in /
+
+    `mnt/apps`. If you see the same files, it means NFS is mounted correctly. You can test this by creating a new file 
+    
+    from one web server and check if it is accessible from other web servers.
+
+![alt text](<images_10/Screenshot 2024-04-26 231406.png>)
+
+![alt text](<images_10/Screenshot 2024-04-26 231521.png>)
+
+7.  Locate the log folder for Apache on the Web Server and mount it to NFS server’s export for logs. Repeat step 4 to 
+
+    make sure the mount point will persist after reboot.
+
+    `sudo mount -t nfs -o rw,nosuid 172.31.23.174:/mnt/logs /var/log/httpd`
+
+### Step 5: Deploy a Tooling Application to our Web Server into a Shared NFS Folder
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+
