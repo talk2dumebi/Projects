@@ -17,7 +17,7 @@
 
     or File System Server such as FTP server, or NFS Server.
 
-![alt text](image_9/Three-Tier-architecture.png)
+![alt text](images_9/Three-Tier-architecture.png)
 
 In this project, we shall:
 
@@ -33,7 +33,7 @@ In this project, we shall:
 
 2.   Attach each of the EBS volumes to your web server instance.
 
-![alt text](<image_9/Screenshot 2024-04-17 010557.png>)
+![alt text](<images_9/Screenshot 2024-04-17 010557.png>)
 
 3.   Open up the Linux terminal to begin configuration, ssh into your server.
 
@@ -43,11 +43,11 @@ In this project, we shall:
  
     likely be xvdf, xvdh, xvdg.
 
-![alt text](<image_9/Screenshot 2024-04-17 012343.png>)
+![alt text](<images_9/Screenshot 2024-04-17 012343.png>)
 
 5.  Use `df -h` command to see all mounts and free space on the server.
 
-![alt text](<image_9/Screenshot 2024-04-17 013628.png>)
+![alt text](<images_9/Screenshot 2024-04-17 013628.png>)
 
 6.  Use gdisk utility to create a single partition (10GB) on each of the 3 disks:
 
@@ -55,37 +55,37 @@ In this project, we shall:
 `sudo gdisk /dev/xvdg`
 `sudo gdisk /dev/xvdh`
 
-![alt text](<image_9/Screenshot 2024-04-17 032527.png>)
+![alt text](<images_9/Screenshot 2024-04-17 032527.png>)
 
 7.  Use `lsblk` utility to view the newly configured partition on each of the 3 disks.
 
-![alt text](<image_9/Screenshot 2024-04-17 032226.png>)
+![alt text](<images_9/Screenshot 2024-04-17 032226.png>)
 
 8.  Install `lvm2` package using `sudo yum install lvm2`. Run `sudo lvmdiskscan` command to check for available 
 
     partitions.
 
-![alt text](<image_9/Screenshot 2024-04-17 033217.png>)
+![alt text](<images_9/Screenshot 2024-04-17 033217.png>)
 
 9.  Use `pvcreate` utility to mark each of 3 disks as physical volumes (PVs) to be used by LVM.
 
 `sudo pvcreate /dev/xvdf1 pvcreate /dev/xvdg1 pvcreate /dev/xvdh1`
 
-![alt text](<image_9/Screenshot 2024-04-17 034305.png>)
+![alt text](<images_9/Screenshot 2024-04-17 034305.png>)
 
 10. Verify that the physical volumes were created successfully by running `sudo pvs`.
 
-![alt text](<image_9/Screenshot 2024-04-17 034005.png>)
+![alt text](<images_9/Screenshot 2024-04-17 034005.png>)
 
 11. Using the `vgcreate` utility, create a volume group named `webdata-vg` and add all the three PVS to the volume group.
 
 `sudo vgcreate webdata-vg /dev/xvdh1 /dev/xvdg1 /dev/xvdf1`
 
-![alt text](<image_9/Screenshot 2024-04-17 035014.png>)
+![alt text](<images_9/Screenshot 2024-04-17 035014.png>)
 
 12. Verify that the volume group was created successfully using `sudo vgs`
 
-![alt text](<image_9/Screenshot 2024-04-17 035235.png>)
+![alt text](<images_9/Screenshot 2024-04-17 035235.png>)
 
 13. Using the `lvcreate`  utility, create two logical volumes(LVs); `apps-lv` and `logs-lv`. Assign each LVs about half
 
@@ -97,11 +97,11 @@ In this project, we shall:
 
 `sudo lvcreate -n logs-lv -L 14G webdata-vg`
 
-![alt text](<image_9/Screenshot 2024-04-17 040419.png>)
+![alt text](<images_9/Screenshot 2024-04-17 040419.png>)
 
 14. Verify that the LVs were created successfully using `sudo lvs`.
 
-![alt text](<image_9/Screenshot 2024-04-17 040632.png>)
+![alt text](<images_9/Screenshot 2024-04-17 040632.png>)
 
 15. Verify the entire setup. Using this command.
 
@@ -109,17 +109,17 @@ In this project, we shall:
 
 `sudo lsblk`
 
-![alt text](<image_9/Screenshot 2024-04-17 041246.png>)
+![alt text](<images_9/Screenshot 2024-04-17 041246.png>)
 
 16. Use `mkfs.ext4` to format the logical volumes with `ext4 filesystem`. Using the following command.
 
 `sudo mkfs -t ext4 /dev/webdata-vg/apps-lv`
 
-![alt text](<image_9/Screenshot 2024-04-18 215057.png>)
+![alt text](<images_9/Screenshot 2024-04-18 215057.png>)
 
 `sudo mkfs -t ext4 /dev/webdata-vg/logs-lv`
 
-![alt text](<image_9/Screenshot 2024-04-18 215209.png>)
+![alt text](<images_9/Screenshot 2024-04-18 215209.png>)
 
 17. Create /var/www/html directory to store website files.
 
@@ -165,17 +165,17 @@ TIP:
 
 ` sudo blkid`
 
-![alt text](<image_9/Screenshot 2024-04-18 222259.png>)
+![alt text](<images_9/Screenshot 2024-04-18 222259.png>)
 
 ` sudo vi /etc/fstab`
 
-![alt text](<image_9/Screenshot 2024-04-18 224013.png>)
+![alt text](<images_9/Screenshot 2024-04-18 224013.png>)
 
 24. Test the configuration and reload the daemon.  `sudo mount -a`  `sudo systemctl daemon-reload`
 
 25. Verify the setup by running `df -h`
 
-![alt text](<image_9/Screenshot 2024-04-18 224613.png>)
+![alt text](<images_9/Screenshot 2024-04-18 224613.png>)
 
 
 ##   Installing wordpress and configuring to use MYSQL Database
@@ -288,7 +288,7 @@ Hint: Do not forget to open MySQL port 3306 on DB Server EC2. For extra security
 
 ONLY from your Web Server’s IP address, so in the Inbound Rule configuration specify source as /32.
 
-![alt text](<image_9/Screenshot 2024-04-21 142033.png>)
+![alt text](<images_9/Screenshot 2024-04-21 142033.png>)
 
 1. Install MySQL client and test that you can connect from your Web Server to your DB server by using mysql-client
 
@@ -306,14 +306,14 @@ ONLY from your Web Server’s IP address, so in the Inbound Rule configuration s
 
 5.  Try to access from your browser the link to your WordPresshttp://<Webserver-Publiuc-IP>/wordpress/
 
-![alt text](<image_9/Screenshot 2024-04-21 143051.png>)
+![alt text](<images_9/Screenshot 2024-04-21 143051.png>)
 
     Click Let’go, complete the login details and hit continue
 
-![alt text](<image_9/Screenshot 2024-04-21 143457.png>)
+![alt text](<images_9/Screenshot 2024-04-21 143457.png>)
 
 If you see this message — it means WordPress has successfully connected to your remote MySQL database.
 
-![alt text](<image_9/Screenshot 2024-04-21 143637.png>)
+![alt text](<images_9/Screenshot 2024-04-21 143637.png>)
 
 Thank you...
