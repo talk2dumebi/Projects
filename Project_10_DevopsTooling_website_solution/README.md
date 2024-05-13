@@ -252,14 +252,53 @@ we need, and the integrity of the data (in the database and on NFS) will be pres
 
 ### Step 5: Deploy a Tooling Application to our Web Server into a Shared NFS Folder
 
+1.  Fork the tooling source code from Darey.io Github Account to your Github account.
 
+2.  Begin by installing git on the webserver: sudo yum install git -y
 
+3.  Initialize Git: git init
 
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-12 223432.png>)
 
+4.  Then run: git clone https://github.com/darey-io/tooling.git
+
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-12 223533.png>)
+
+5.  Deploy the tooling website’s code to the Webserver. Ensure that the html folder from the repository is deployed to 
+
+`/var/www/html`
+
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-12 224131.png>)
+
+6.  On the webserver, ensure port 80 in open to all traffic in the security groups. Attempt to restart httpd service, it very likely that it will fail to start at this point stating that httpd service is unable to write to the log directory. If you encounter this error, check permissions to your /var/www/html folder to ensure that it is own by root.
+
+Note.: Disable SELinux by running `sudo setenforce 0`
+To make this change permanent, open following config file `sudo vi /etc/sysconfig/selinux` and set SELINUX=disabled then restart httpd.
+
+7.  Update the website’s configuration to connect to the database: `sudo vi /var/www/html/functions.php`
+
+8.  Apply tooling-db.sql script to your database using this command `mysqli_connect('<Private_IP_DB>', 'webaccess','password', 'tooling')`
+
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-12 225442.png>)
+
+9.  In the databse server update the bind address to 0.0.0.0: `sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf`
+
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-13 021036.png>)
+
+10. Then create in MySQL a new admin user with username: `myuser` and password: `password`:
+
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-13 010537.png>)
     
+11. Finally, open the website in your browser with the public IP of the webserver and make sure you can login into the 
+
+    website with myuser user.
+
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-13 022019.png>)
+
+![alt text](<../Project_9_Web Solution with Wordpress/images_9/Screenshot 2024-05-13 013556.png>)
     
-    
-    
+
+Thank you...
     
     
     
